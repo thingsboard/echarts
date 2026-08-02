@@ -1,98 +1,34 @@
 # Apache ECharts
 
-<a href="https://echarts.apache.org/">
-    <img style="vertical-align: top;" src="./asset/logo.png?raw=true" alt="logo" height="50px">
-</a>
+Apache ECharts is a free, powerful charting and visualization library offering
+easy ways to add intuitive, interactive, and highly customizable charts to your
+commercial products. Read more at the website: <https://echarts.apache.org/>
 
-Apache ECharts is a free, powerful charting and visualization library offering easy ways to add intuitive, interactive, and highly customizable charts to your commercial products. It is written in pure JavaScript and based on <a href="https://github.com/ecomfe/zrender">zrender</a>, which is a whole new lightweight canvas library.
+This repository is the ThingsBoard-maintained fork of
+[Apache ECharts](https://github.com/apache/echarts), consumed by the ThingsBoard
+platform as a GitHub archive tarball. Fork releases are tagged with a `-TB`
+version suffix and differ from the upstream 5.5.1 release as follows:
 
-**[中文官网](https://echarts.apache.org/zh/index.html)** | **[ENGLISH HOMEPAGE](https://echarts.apache.org/en/index.html)**
++ `package.json` additionally exports the internal `lib/coord/axisHelper` module
+  and resolves `zrender` to the
+  [ThingsBoard fork of zrender](https://github.com/thingsboard/zrender), which
+  carries a pointer-transformer fix on top of the upstream zrender 5.5.0 release.
++ `index.d.ts` replaces the export assignment with re-exports for TypeScript ESM
+  compatibility; the file carries its own modification notice.
++ The `lib` and `dist` build outputs, which upstream generates only when
+  publishing to npm, are committed (and un-ignored in `.gitignore`) so that the
+  GitHub archive tarball installs the way the npm package would. The `dist`
+  bundles are rebuilt from this fork and therefore include the modified zrender.
 
-[![License](https://img.shields.io/npm/l/echarts?color=5470c6)](https://github.com/apache/echarts/blob/master/LICENSE) [![Latest npm release](https://img.shields.io/npm/v/echarts?color=91cc75)](https://www.npmjs.com/package/echarts) [![NPM downloads](https://img.shields.io/npm/dm/echarts.svg?label=npm%20downloads&style=flat&color=fac858)](https://www.npmjs.com/package/echarts) [![Contributors](https://img.shields.io/github/contributors/apache/echarts?color=3ba272)](https://github.com/apache/echarts/graphs/contributors)
-
-[![Build Status](https://github.com/apache/echarts/actions/workflows/ci.yml/badge.svg)](https://github.com/apache/echarts/actions/workflows/ci.yml)
-
-## Get Apache ECharts
-
-You may choose one of the following methods:
-
-+ Download from the [official website](https://echarts.apache.org/download.html)
-+ `npm install echarts --save`
-+ CDN: [jsDelivr CDN](https://www.jsdelivr.com/package/npm/echarts?path=dist)
-
-## Docs
-
-+ [Get Started](https://echarts.apache.org/handbook)
-+ [API](https://echarts.apache.org/api.html)
-+ [Option Manual](https://echarts.apache.org/option.html)
-+ [Examples](https://echarts.apache.org/examples)
-
-## Get Help
-
-+ [GitHub Issues](https://github.com/apache/echarts/issues) for bug report and feature requests
-+ Email [dev@echarts.apache.org](mailto:dev@echarts.apache.org) for general questions
-+ Subscribe to the [mailing list](https://echarts.apache.org/maillist.html) to get updated with the project
-
-## Build
-
-Build echarts source code:
-
-Execute the instructions in the root directory of the echarts:
-([Node.js](https://nodejs.org) is required)
-
-```shell
-# Install the dependencies from NPM:
-npm install
-
-# Rebuild source code immediately in watch mode when changing the source code.
-# It opens the `./test` directory, and you may open `-cases.html` to get the list
-# of all test cases.
-# If you wish to create a test case, run `npm run mktest:help` to learn more.
-npm run dev
-
-# Check the correctness of TypeScript code.
-npm run checktype
-
-# If intending to build and get all types of the "production" files:
-npm run release
-```
-
-Then the "production" files are generated in the `dist` directory.
-
-## Contribution
-
-Please refer to the [contributing](https://github.com/apache/echarts/blob/master/CONTRIBUTING.md) document if you wish to debug locally or make pull requests.
-
-## Resources
-
-### Awesome ECharts
-
-[https://github.com/ecomfe/awesome-echarts](https://github.com/ecomfe/awesome-echarts)
-
-### Extensions
-
-+ [ECharts GL](https://github.com/ecomfe/echarts-gl) An extension pack of ECharts, which provides 3D plots, globe visualization, and WebGL acceleration.
-
-+ [Liquidfill 水球图](https://github.com/ecomfe/echarts-liquidfill)
-
-+ [Wordcloud 字符云](https://github.com/ecomfe/echarts-wordcloud)
-
-+ [Extension for Baidu Map 百度地图扩展](https://github.com/apache/echarts/tree/master/extension-src/bmap) An extension provides a wrapper of Baidu Map Service SDK.
-
-+ [vue-echarts](https://github.com/ecomfe/vue-echarts) ECharts component for Vue.js
-
-+ [echarts-stat](https://github.com/ecomfe/echarts-stat) Statistics tool for ECharts
+The list above serves as the modification notice required by section 4(b) of the
+Apache License 2.0 for the changed files that cannot carry an in-file notice,
+such as the JSON manifests and the generated bundles.
 
 ## License
 
-ECharts is available under the Apache License V2.
+ECharts is licensed under the Apache License, Version 2.0. See
+[LICENSE](LICENSE) for the full license text.
 
-## Code of Conduct
-
-Please refer to [Apache Code of Conduct](https://www.apache.org/foundation/policies/conduct.html).
-
-## Paper
-
-Deqing Li, Honghui Mei, Yi Shen, Shuang Su, Wenli Zhang, Junting Wang, Ming Zu, Wei Chen.
-[ECharts: A Declarative Framework for Rapid Construction of Web-based Visualization](https://www.sciencedirect.com/science/article/pii/S2468502X18300068).
-Visual Informatics, 2018.
+The attribution notices of the original work are preserved in the
+[NOTICE](NOTICE) file, and the bundled third-party work is credited in the
+`licenses` directory.
