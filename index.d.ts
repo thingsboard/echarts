@@ -17,6 +17,11 @@
 * under the License.
 */
 
+/*
+ * SPDX-FileCopyrightText: Modifications Copyright (C) 2026-present ThingsBoard, Inc.
+ * This file has been modified from the original Apache ECharts source.
+ * See the project's Git history for details of the changes.
+ */
 export * from './types/dist/echarts';
 // Export for UMD module.
 export as namespace echarts;
