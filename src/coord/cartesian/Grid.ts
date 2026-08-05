@@ -17,6 +17,12 @@
 * under the License.
 */
 
+/*
+ * SPDX-FileCopyrightText: Modifications Copyright (C) 2024-present ThingsBoard, Inc.
+ * This file has been modified from the original Apache ECharts source.
+ * See the project's Git history for details of the changes.
+ */
+
 /**
  * Grid is a region which contains at most 4 cartesian systems
  *

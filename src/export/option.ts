@@ -17,6 +17,12 @@
 * under the License.
 */
 
+/*
+ * SPDX-FileCopyrightText: Modifications Copyright (C) 2024-present ThingsBoard, Inc.
+ * This file has been modified from the original Apache ECharts source.
+ * See the project's Git history for details of the changes.
+ */
+
 import type {GridOption as GridComponentOption} from '../coord/cartesian/GridModel';
 import type {PolarOption as PolarComponentOption} from '../coord/polar/PolarModel';
 import type {RadarOption as RadarComponentOption} from '../coord/radar/RadarModel';
